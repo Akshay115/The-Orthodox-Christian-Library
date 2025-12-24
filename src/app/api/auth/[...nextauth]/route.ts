@@ -4,7 +4,7 @@ import { authOptions } from '../../../../auth'
 
 export { authOptions }
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 
 const handler = NextAuth(authOptions)
 
