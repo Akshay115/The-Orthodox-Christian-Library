@@ -1,0 +1,29 @@
+import { NextResponse } from 'next/server'
+
+import { getServerSession } from 'next-auth'
+
+import { authOptions } from '../../auth/[...nextauth]/route'
+
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
+export async function GET() {
+
+  const session = await getServerSession(authOptions)
+
+  if (!session || (session.user as any).role !== 'admin') {
+
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+
+  }
+
+  const translations = await prisma.translation.findMany({
+
+    include: { book: true, translator: true }
+
+  })
+
+  return NextResponse.json(translations)
+
+}
