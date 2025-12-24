@@ -8,6 +8,8 @@ import { PrismaClient } from '@prisma/client'
 
 import bcrypt from 'bcryptjs'
 
+export const runtime = 'edge'
+
 const prisma = new PrismaClient()
 
 export async function POST(req: NextRequest) {
