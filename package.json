@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:worker": "npx open-next@latest build",
+    "deploy:worker": "npx wrangler deploy"
   },
   "dependencies": {
     "@prisma/client": "^5.0.0",
