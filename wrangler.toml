@@ -1,0 +1,9 @@
+name = "the-orthodox-christian-library"
+main = ".open-next/worker.js"
+compatibility_date = "2025-12-24"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+command = "npx open-next@latest build"
+
+# Set secrets like XAI_API_KEY via `wrangler secret put` or the dashboard.
