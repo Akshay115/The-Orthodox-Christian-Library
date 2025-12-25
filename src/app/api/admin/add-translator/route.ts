@@ -8,7 +8,7 @@ import { PrismaClient } from '@prisma/client'
 
 import bcrypt from 'bcryptjs'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 
 const prisma = new PrismaClient()
 

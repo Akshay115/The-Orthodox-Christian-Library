@@ -2,21 +2,9 @@ import { NextResponse } from 'next/server'
 
 import { PrismaClient } from '@prisma/client'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 
-let prisma: PrismaClient
-
-if (process.env.NODE_ENV === 'production') {
-  prisma = new PrismaClient()
-} else {
-  // @ts-ignore
-  if (!(global as any).prisma) {
-    // @ts-ignore
-    (global as any).prisma = new PrismaClient()
-  }
-  // @ts-ignore
-  prisma = (global as any).prisma
-}
+const prisma = new PrismaClient()
 
 export async function GET() {
 

@@ -6,7 +6,7 @@ import { authOptions } from '../../../../auth'
 
 import { PrismaClient } from '@prisma/client'
 
-export const runtime = 'edge'
+export const runtime = 'nodejs'
 
 const prisma = new PrismaClient()
 
